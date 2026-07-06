@@ -22,6 +22,10 @@ app.post("/fight", (req, res) => {
     const randomIndex = Math.floor(Math.random() * enemies.length);
     const enemy = enemies[randomIndex];
 
+    player.hp -= enemy.damage;
+    player.xp += enemy.xp;
+    player.gold += enemy.gold;
+
     const battleResult = {
         enemy: enemy.name,
         damageTaken: enemy.damage,
