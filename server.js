@@ -1,6 +1,7 @@
 const express = require("express");
 const player = require("./data/player.json");
 const enemies = require("./data/enemies.json");
+const shop = require("./data/shop.json");
 
 const app = express();
 
@@ -20,6 +21,10 @@ app.get("/enemies", (req, res) => {
 
 app.get("/inventory", (req, res) => {
     res.json(player.inventory);
+});
+
+app.get("/shop", (req, res) => {
+    res.json(shop);
 });
 
 app.post("/heal", (req, res) => {
@@ -70,6 +75,7 @@ app.post("/fight", (req, res) => {
 
     res.json(battleResult);
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
