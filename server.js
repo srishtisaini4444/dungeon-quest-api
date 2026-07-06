@@ -56,6 +56,25 @@ app.post("/buy/:item", (req, res) => {
 
 });
 
+app.post("/equip/:weapon", (req, res) => {
+
+    const weapon = req.params.weapon;
+
+    if (!player.inventory.includes(weapon)) {
+        return res.json({
+            message: "Weapon not found in inventory!"
+        });
+    }
+
+    player.weapon = weapon;
+
+    res.json({
+        message: `${weapon} equipped successfully!`,
+        weapon: player.weapon
+    });
+
+});
+
 app.post("/heal", (req, res) => {
     if (player.inventory.includes("Potion")) {
         player.hp += 20;
