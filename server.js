@@ -18,6 +18,10 @@ app.get("/enemies", (req, res) => {
     res.json(enemies);
 });
 
+app.get("/inventory", (req, res) => {
+    res.json(player.inventory);
+});
+
 app.post("/fight", (req, res) => {
     const randomIndex = Math.floor(Math.random() * enemies.length);
     const enemy = enemies[randomIndex];
@@ -25,6 +29,14 @@ app.post("/fight", (req, res) => {
     player.hp -= enemy.damage;
     player.xp += enemy.xp;
     player.gold += enemy.gold;
+
+    if (player.xp >= 100) {
+    player.level++;
+    player.hp = 100;
+    player.xp -= 100;
+    }
+
+    player.inventory.push(enemy.loot);
 
     const battleResult = {
         enemy: enemy.name,
