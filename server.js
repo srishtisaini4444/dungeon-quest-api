@@ -9,7 +9,23 @@ const app = express();
 const PORT = 3000;
 
 app.get("/", (req, res) => {
-    res.send("⚔️ Welcome to Dungeon Quest API!");
+    res.json({
+        message: "⚔️ Welcome to Dungeon Quest API!",
+        version: "1.0.0",
+        endpoints: [
+            "/player",
+            "/enemies",
+            "/inventory",
+            "/shop",
+            "/fight",
+            "/heal",
+            "/buy/:item",
+            "/equip/:weapon",
+            "/save",
+            "/load",
+            "/reset"
+        ]
+    });
 });
 
 app.get("/player", (req, res) => {
