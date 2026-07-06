@@ -2,6 +2,7 @@ const express = require("express");
 const player = require("./data/player.json");
 const enemies = require("./data/enemies.json");
 const shop = require("./data/shop.json");
+const fs = require("fs");
 
 const app = express();
 
@@ -71,6 +72,19 @@ app.post("/equip/:weapon", (req, res) => {
     res.json({
         message: `${weapon} equipped successfully!`,
         weapon: player.weapon
+    });
+
+});
+
+app.post("/save", (req, res) => {
+
+    fs.writeFileSync(
+        "./data/player.json",
+        JSON.stringify(player, null, 2)
+    );
+
+    res.json({
+        message: "Game saved successfully!"
     });
 
 });
