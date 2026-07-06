@@ -19,11 +19,18 @@ app.get("/enemies", (req, res) => {
 });
 
 app.post("/fight", (req, res) => {
-
     const randomIndex = Math.floor(Math.random() * enemies.length);
     const enemy = enemies[randomIndex];
-    res.json(enemy);
 
+    const battleResult = {
+        enemy: enemy.name,
+        damageTaken: enemy.damage,
+        xpGained: enemy.xp,
+        goldGained: enemy.gold,
+        loot: enemy.loot
+    };
+
+    res.json(battleResult);
 });
 
 app.listen(PORT, () => {
