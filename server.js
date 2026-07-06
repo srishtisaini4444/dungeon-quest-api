@@ -18,6 +18,14 @@ app.get("/enemies", (req, res) => {
     res.json(enemies);
 });
 
+app.post("/fight", (req, res) => {
+
+    const randomIndex = Math.floor(Math.random() * enemies.length);
+    const enemy = enemies[randomIndex];
+    res.json(enemy);
+
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
