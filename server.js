@@ -22,6 +22,28 @@ app.get("/inventory", (req, res) => {
     res.json(player.inventory);
 });
 
+app.post("/heal", (req, res) => {
+    if (player.inventory.includes("Potion")) {
+        player.hp += 20;
+
+        if (player.hp > 100) {
+            player.hp = 100;
+        }
+
+        const potionIndex = player.inventory.indexOf("Potion");
+        player.inventory.splice(potionIndex, 1);
+
+        res.json({
+            message: "Potion used!",
+            hp: player.hp
+        });
+    } else {
+        res.json({
+            message: "No potions left!"
+        });
+    }
+});
+
 app.post("/fight", (req, res) => {
     const randomIndex = Math.floor(Math.random() * enemies.length);
     const enemy = enemies[randomIndex];
