@@ -155,12 +155,20 @@ app.post("/fight", (req, res) => {
     player.inventory.push(enemy.loot);
 
     const battleResult = {
-        enemy: enemy.name,
-        damageTaken: enemy.damage,
-        xpGained: enemy.xp,
-        goldGained: enemy.gold,
-        loot: enemy.loot
-    };
+    enemy: enemy.name,
+    damageTaken: enemy.damage,
+    xpGained: enemy.xp,
+    goldGained: enemy.gold,
+    loot: enemy.loot,
+
+    player: {
+        hp: player.hp,
+        xp: player.xp,
+        gold: player.gold,
+        level: player.level,
+        weapon: player.weapon
+    }
+};
 
     res.json(battleResult);
 });
