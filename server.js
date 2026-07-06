@@ -99,6 +99,23 @@ app.get("/load", (req, res) => {
 
 });
 
+app.post("/reset", (req, res) => {
+
+    player.name = "Hero";
+    player.hp = 100;
+    player.level = 1;
+    player.xp = 0;
+    player.gold = 50;
+    player.weapon = "Wooden Sword";
+    player.inventory = ["Potion"];
+
+    res.json({
+        message: "Game reset successfully!",
+        player
+    });
+
+});
+
 app.post("/heal", (req, res) => {
     if (player.inventory.includes("Potion")) {
         player.hp += 20;
