@@ -143,6 +143,10 @@ app.post("/fight", (req, res) => {
     const enemy = enemies[randomIndex];
 
     player.hp -= enemy.damage;
+    if (player.hp < 0) {
+    player.hp = 0;
+}
+
     player.xp += enemy.xp;
     player.gold += enemy.gold;
 
