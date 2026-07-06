@@ -147,6 +147,13 @@ app.post("/fight", (req, res) => {
     player.hp = 0;
 }
 
+if (player.hp === 0) {
+    return res.json({
+        message: "Game Over!",
+        enemy: enemy.name
+    });
+}
+
     player.xp += enemy.xp;
     player.gold += enemy.gold;
 
