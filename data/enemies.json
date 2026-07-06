@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Goblin",
+        "hp": 30,
+        "damage": 8,
+        "xp": 20,
+        "gold": 15,
+        "loot": "Potion"
+    },
+    {
+        "name": "Skeleton",
+        "hp": 40,
+        "damage": 10,
+        "xp": 30,
+        "gold": 20,
+        "loot": "Iron Sword"
+    },
+    {
+        "name": "Slime",
+        "hp": 20,
+        "damage": 5,
+        "xp": 15,
+        "gold": 10,
+        "loot": "Potion"
+    }
+]
