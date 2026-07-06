@@ -89,6 +89,16 @@ app.post("/save", (req, res) => {
 
 });
 
+app.get("/load", (req, res) => {
+
+    const savedPlayer = JSON.parse(
+        fs.readFileSync("./data/player.json", "utf8")
+    );
+
+    res.json(savedPlayer);
+
+});
+
 app.post("/heal", (req, res) => {
     if (player.inventory.includes("Potion")) {
         player.hp += 20;
