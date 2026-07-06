@@ -27,6 +27,35 @@ app.get("/shop", (req, res) => {
     res.json(shop);
 });
 
+app.post("/buy/:item", (req, res) => {
+
+    const item = shop.find(
+        product => product.name.toLowerCase() === req.params.item.toLowerCase()
+    );
+
+    if (!item) {
+        return res.json({
+            message: "Item not found!"
+        });
+    }
+
+    if (player.gold < item.price) {
+        return res.json({
+            message: "Not enough gold!"
+        });
+    }
+
+    player.gold -= item.price;
+    player.inventory.push(item.name);
+
+    res.json({
+        message: `${item.name} purchased successfully!`,
+        gold: player.gold,
+        inventory: player.inventory
+    });
+
+});
+
 app.post("/heal", (req, res) => {
     if (player.inventory.includes("Potion")) {
         player.hp += 20;
