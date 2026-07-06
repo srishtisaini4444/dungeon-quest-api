@@ -1,0 +1,73 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#16121d;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:450px;
+    background:#241d31;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 0 25px rgba(140,82,255,.35);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#ffd166;
+}
+
+.player-card,
+.log{
+    background:#312542;
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.player-card p{
+    margin:10px 0;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-bottom:20px;
+}
+
+button{
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#7c3aed;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    background:#9254ff;
+}
+
+.log{
+    min-height:120px;
+}
+
+#battleLog{
+    margin-top:10px;
+    color:#ffe082;
+}
