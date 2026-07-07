@@ -48,17 +48,25 @@ Math.min(result.player.gold, 100) + "%";
     
 
    document.getElementById("battleLog").innerHTML = `
-<h3>⚔️ Battle Result</h3>
+<div class="battle-card">
 
-<p><strong>Enemy:</strong> ${result.enemy}</p>
+<h2>⚔ Battle Result</h2>
 
-<p><strong>❤️ Damage Taken:</strong> ${result.damageTaken}</p>
+<p>👹 <strong>Enemy</strong> <span>${result.enemy}</span></p>
 
-<p><strong>⭐ XP Gained:</strong> +${result.xpGained}</p>
+<p>❤️ <strong>Damage Taken</strong> <span>${result.damageTaken}</span></p>
 
-<p><strong>💰 Gold Earned:</strong> +${result.goldGained}</p>
+<p>⭐ <strong>XP Gained</strong> <span>+${result.xpGained}</span></p>
 
-<p><strong>🎒 Loot:</strong> ${result.loot}</p>
+<p>💰 <strong>Gold Earned</strong> <span>+${result.goldGained}</span></p>
+
+<p>🎒 <strong>Loot</strong> <span>${result.loot}</span></p>
+
+<hr>
+
+<h3 style="color:#3cff90;">🏆 Victory!</h3>
+
+</div>
 `;
 }
 
