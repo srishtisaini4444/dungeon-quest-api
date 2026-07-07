@@ -36,6 +36,25 @@ async function fight(){
     `;
 }
 
+async function heal(){
+
+    const response = await fetch("/heal",{
+        method:"POST"
+    });
+
+    const result = await response.json();
+
+    loadPlayer();
+
+    document.getElementById("battleLog").innerHTML =
+    result.message;
+
+}
+
 document
 .getElementById("fightBtn")
 .addEventListener("click", fight);
+
+document
+.getElementById("healBtn")
+.addEventListener("click", heal);
