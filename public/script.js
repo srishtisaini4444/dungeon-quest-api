@@ -67,6 +67,21 @@ async function saveGame(){
 
 }
 
+async function resetGame(){
+
+    const response = await fetch("/reset",{
+        method:"POST"
+    });
+
+    const result = await response.json();
+
+    loadPlayer();
+
+    document.getElementById("battleLog").innerHTML =
+    result.message;
+
+}
+
 async function inventory(){
 
     const response = await fetch("/inventory");
@@ -109,6 +124,10 @@ document
 document
 .getElementById("saveBtn")
 .addEventListener("click", saveGame);
+
+document
+.getElementById("resetBtn")
+.addEventListener("click", resetGame);
 
 document
 .getElementById("inventoryBtn")
