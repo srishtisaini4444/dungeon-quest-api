@@ -36,6 +36,18 @@ async function fight(){
     `;
 }
 
+async function inventory(){
+
+    const response = await fetch("/inventory");
+
+    const items = await response.json();
+
+    document.getElementById("battleLog").innerHTML =
+    "<b>Inventory</b><br><br>" +
+    items.join("<br>");
+
+}
+
 async function heal(){
 
     const response = await fetch("/heal",{
@@ -58,3 +70,7 @@ document
 document
 .getElementById("healBtn")
 .addEventListener("click", heal);
+
+document
+.getElementById("inventoryBtn")
+.addEventListener("click", inventory);
