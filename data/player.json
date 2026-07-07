@@ -1,13 +1,13 @@
 {
   "name": "Hero",
-  "hp": 100,
-  "xp": 5,
-  "level": 2,
-  "gold": 170,
+  "hp": 82,
+  "xp": 50,
+  "level": 1,
+  "gold": 85,
   "weapon": "Wooden Sword",
   "inventory": [
+    "Potion",
     "Iron Sword",
-    "Iron Sword",
-    "Iron Sword"
+    "Potion"
   ]
 }

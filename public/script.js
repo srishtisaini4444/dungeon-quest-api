@@ -4,7 +4,8 @@ async function loadPlayer(){
 
     const player = await response.json();
 
-    document.getElementById("hp").textContent = player.hp;
+    document.getElementById("hp").textContent =
+    `${player.hp} / 100`;
     document.getElementById("level").textContent = player.level;
     document.getElementById("gold").textContent = player.gold;
     document.getElementById("weapon").textContent = player.weapon;
@@ -30,10 +31,20 @@ async function fight(){
 
     const result = await response.json();
 
-    document.getElementById("hp").textContent = result.player.hp;
+    document.getElementById("hp").textContent =
+    `${result.player.hp} / 100`;
     document.getElementById("level").textContent = result.player.level;
     document.getElementById("gold").textContent = result.player.gold;
     document.getElementById("weapon").textContent = result.player.weapon;
+
+    document.getElementById("healthBar").style.width =
+result.player.hp + "%";
+
+document.getElementById("xpBar").style.width =
+result.player.xp + "%";
+
+document.getElementById("goldBar").style.width =
+Math.min(result.player.gold, 100) + "%";
     
 
    document.getElementById("battleLog").innerHTML = `
@@ -148,6 +159,3 @@ document
 .getElementById("inventoryBtn")
 .addEventListener("click", inventory);
 
-document
-.getElementById("refreshBtn")
-.addEventListener("click", loadPlayer);
