@@ -137,3 +137,7 @@ document
 document
 .getElementById("inventoryBtn")
 .addEventListener("click", inventory);
+
+document
+.getElementById("refreshBtn")
+.addEventListener("click", loadPlayer);
