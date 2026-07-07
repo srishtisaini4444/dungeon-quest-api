@@ -64,7 +64,11 @@ button:hover{
 }
 
 .log{
-    min-height:120px;
+    background:#312542;
+    padding:20px;
+    border-radius:12px;
+    min-height:180px;
+    line-height:1.8;
 }
 
 #battleLog{

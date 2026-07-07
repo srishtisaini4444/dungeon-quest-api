@@ -26,14 +26,19 @@ async function fight(){
     document.getElementById("gold").textContent = result.player.gold;
     document.getElementById("weapon").textContent = result.player.weapon;
 
-    document.getElementById("battleLog").innerHTML =
-    `
-    ⚔️ You fought a ${result.enemy}!<br>
-    ❤️ Damage: ${result.damageTaken}<br>
-    ⭐ XP: +${result.xpGained}<br>
-    💰 Gold: +${result.goldGained}<br>
-    🎒 Loot: ${result.loot}
-    `;
+   document.getElementById("battleLog").innerHTML = `
+<h3>⚔️ Battle Result</h3>
+
+<p><strong>Enemy:</strong> ${result.enemy}</p>
+
+<p><strong>❤️ Damage Taken:</strong> ${result.damageTaken}</p>
+
+<p><strong>⭐ XP Gained:</strong> +${result.xpGained}</p>
+
+<p><strong>💰 Gold Earned:</strong> +${result.goldGained}</p>
+
+<p><strong>🎒 Loot:</strong> ${result.loot}</p>
+`;
 }
 
 async function shop(){
