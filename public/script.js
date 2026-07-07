@@ -36,6 +36,24 @@ async function fight(){
     `;
 }
 
+async function shop(){
+
+    const response = await fetch("/shop");
+
+    const items = await response.json();
+
+    let text="<b>Shop</b><br><br>";
+
+    items.forEach(item=>{
+
+        text+=`${item.name} - ${item.price} Gold<br>`;
+
+    });
+
+    document.getElementById("battleLog").innerHTML=text;
+
+}
+
 async function inventory(){
 
     const response = await fetch("/inventory");
@@ -70,6 +88,10 @@ document
 document
 .getElementById("healBtn")
 .addEventListener("click", heal);
+
+document
+.getElementById("shopBtn")
+.addEventListener("click", shop);
 
 document
 .getElementById("inventoryBtn")
