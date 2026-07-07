@@ -6,56 +6,138 @@
     <title>Dungeon Quest</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/7f4a0b8e5f.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-    <div class="container">
+<div class="overlay"></div>
 
-        <h1>⚔️ Dungeon Quest ⚔️</h1>
+<div class="container">
 
-        <div class="player-card">
+<header>
 
-            <h2>Hero Stats</h2>
+<h1>⚔ DUNGEON QUEST ⚔</h1>
 
-            <p>❤️ HP: <span id="hp">100</span></p>
+<p>Your adventure awaits...</p>
 
-            <p>⭐ Level: <span id="level">1</span></p>
+</header>
 
-            <p>💰 Gold: <span id="gold">50</span></p>
+<div class="main-grid">
 
-            <p>🗡️ Weapon: <span id="weapon">Wooden Sword</span></p>
+<!-- LEFT -->
 
-        </div>
+<div class="hero-card">
 
-        <div class="buttons">
+<div class="avatar">
 
-            <button id="fightBtn">⚔️ Fight</button>
+<img src="https://api.dicebear.com/8.x/adventurer/svg?seed=Hero" alt="hero">
 
-            <button id="healBtn">❤️ Heal</button>
+</div>
 
-            <button id="inventoryBtn">🎒 Inventory</button>
+<h2>Hero</h2>
 
-            <button id="shopBtn">🛒 Shop</button>
+<div class="stats">
 
-            <button id="saveBtn">💾 Save</button>
+<p>❤️ HP <span id="hp">100</span></p>
 
-            <button id="resetBtn">🔄 Reset</button>
+<p>⭐ Level <span id="level">1</span></p>
 
-            <button id="refreshBtn">🔄 Refresh Stats</button>
+<p>💰 Gold <span id="gold">50</span></p>
 
-        </div>
+<p>🗡 Weapon</p>
 
-        <div class="log">
+<h3 id="weapon">Wooden Sword</h3>
 
-            <h2>Battle Log</h2>
+</div>
 
-            <p id="battleLog">
-    ⚔️ Ready for battle!
-</p>
+</div>
 
-        </div>
+<!-- CENTER -->
 
-    </div>
+<div class="center-panel">
+
+<h2>Actions</h2>
+
+<div class="button-grid">
+
+<button id="fightBtn">⚔ Fight</button>
+
+<button id="healBtn">❤️ Heal</button>
+
+<button id="inventoryBtn">🎒 Inventory</button>
+
+<button id="shopBtn">🛒 Shop</button>
+
+<button id="saveBtn">💾 Save</button>
+
+<button id="resetBtn">🔄 Reset</button>
+
+</div>
+
+<div class="battle-card">
+
+<h2>Battle Log</h2>
+
+<div id="battleLog">
+
+Welcome to Dungeon Quest!
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="info-card">
+
+<h2>Quick Stats</h2>
+
+<div class="info-item">
+
+<span>❤️ HP</span>
+
+<span id="hpSide">100</span>
+
+</div>
+
+<div class="info-item">
+
+<span>⭐ Level</span>
+
+<span id="levelSide">1</span>
+
+</div>
+
+<div class="info-item">
+
+<span>💰 Gold</span>
+
+<span id="goldSide">50</span>
+
+</div>
+
+<div class="info-item">
+
+<span>🗡 Weapon</span>
+
+<span id="weaponSide">Wooden Sword</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 <script src="script.js"></script>
 
