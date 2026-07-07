@@ -9,6 +9,15 @@ async function loadPlayer(){
     document.getElementById("gold").textContent = player.gold;
     document.getElementById("weapon").textContent = player.weapon;
 
+    document.getElementById("healthBar").style.width =
+player.hp + "%";
+
+document.getElementById("xpBar").style.width =
+player.xp + "%";
+
+document.getElementById("goldBar").style.width =
+Math.min(player.gold,100) + "%";
+
 }
 
 loadPlayer();
@@ -25,6 +34,7 @@ async function fight(){
     document.getElementById("level").textContent = result.player.level;
     document.getElementById("gold").textContent = result.player.gold;
     document.getElementById("weapon").textContent = result.player.weapon;
+    
 
    document.getElementById("battleLog").innerHTML = `
 <h3>⚔️ Battle Result</h3>

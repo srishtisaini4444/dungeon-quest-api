@@ -31,7 +31,7 @@
 
 <div class="main-grid">
 
-<!-- LEFT -->
+
 
 <div class="hero-card">
 
@@ -45,13 +45,31 @@
 
 <div class="stats">
 
-<p>❤️ HP <span id="hp">100</span></p>
+<label>❤️ Health</label>
 
-<p>⭐ Level <span id="level">1</span></p>
+<div class="progress">
+    <div class="fill health" id="healthBar"></div>
+</div>
 
-<p>💰 Gold <span id="gold">50</span></p>
+<p id="hp">100 / 100</p>
 
-<p>🗡 Weapon</p>
+<label>⭐ Level</label>
+
+<div class="progress">
+    <div class="fill xp" id="xpBar"></div>
+</div>
+
+<p id="level">1</p>
+
+<label>💰 Gold</label>
+
+<div class="progress">
+    <div class="fill gold" id="goldBar"></div>
+</div>
+
+<p id="gold">50</p>
+
+<label>🗡 Weapon</label>
 
 <h3 id="weapon">Wooden Sword</h3>
 
@@ -59,7 +77,7 @@
 
 </div>
 
-<!-- CENTER -->
+
 
 <div class="center-panel">
 
@@ -95,7 +113,7 @@ Welcome to Dungeon Quest!
 
 </div>
 
-<!-- RIGHT -->
+
 
 <div class="info-card">
 
