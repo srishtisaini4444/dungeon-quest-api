@@ -144,43 +144,48 @@ margin:15px 0 25px;
 }
 
 button{
-    padding:20px;
+    padding:22px;
     border:none;
-    border-radius:14px;
+    border-radius:16px;
     color:white;
-    font-size:18px;
-    font-weight:600;
+    font-size:22px;
+    font-weight:700;
     cursor:pointer;
-    transition:.35s;
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
 button:hover{
-    transform:translateY(-6px) scale(1.03);
-    box-shadow:0 0 20px rgba(255,255,255,.25);
+    transform:translateY(-8px) scale(1.03);
+    filter:brightness(1.15);
+    box-shadow:0 0 25px rgba(255,255,255,.35);
 }
 
 #fightBtn{
-    background:#d72663;
+    background:linear-gradient(135deg,#ff416c,#ff4b2b);
 }
 
 #healBtn{
-    background:#16a34a;
+    background:linear-gradient(135deg,#00b09b,#96c93d);
 }
 
 #inventoryBtn{
-    background:#7e22ce;
+    background:linear-gradient(135deg,#8e2de2,#4a00e0);
 }
 
 #shopBtn{
-    background:#ca8a04;
+    background:linear-gradient(135deg,#f7971e,#ffd200);
+    color:#222;
 }
 
 #saveBtn{
-    background:#2563eb;
+    background:linear-gradient(135deg,#2193b0,#6dd5ed);
 }
 
 #resetBtn{
-    background:#db2777;
+    background:linear-gradient(135deg,#fc466b,#3f5efb);
 }
 
 .battle-card{
@@ -266,4 +271,8 @@ font-size: 42px;
 
 .gold{
     background:#facc15;
+}
+
+button:active{
+    transform:scale(.96);
 }
