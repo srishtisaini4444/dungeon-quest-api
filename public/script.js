@@ -54,6 +54,19 @@ async function shop(){
 
 }
 
+async function saveGame(){
+
+    const response = await fetch("/save",{
+        method:"POST"
+    });
+
+    const result = await response.json();
+
+    document.getElementById("battleLog").innerHTML =
+    result.message;
+
+}
+
 async function inventory(){
 
     const response = await fetch("/inventory");
@@ -92,6 +105,10 @@ document
 document
 .getElementById("shopBtn")
 .addEventListener("click", shop);
+
+document
+.getElementById("saveBtn")
+.addEventListener("click", saveGame);
 
 document
 .getElementById("inventoryBtn")
