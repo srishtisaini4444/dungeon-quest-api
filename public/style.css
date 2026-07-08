@@ -627,3 +627,175 @@ opacity:1;
 transform:translate(-50%,-50%) scale(1);
 
 }
+
+#gameScreen{
+
+display:none;
+
+opacity:0;
+
+transition:.8s;
+
+}
+
+#landingScreen{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+linear-gradient(rgba(8,8,25,.8),rgba(8,8,25,.8)),
+url("./assets/background.jpg") center/cover;
+
+z-index:9999;
+
+transition: opacity .7s ease;
+
+}
+
+.landing-content{
+
+text-align:center;
+
+animation:fadeIn 1.5s;
+
+}
+
+.landing-title{
+
+font-size:82px;
+
+font-family:"Cinzel",serif;
+
+color:#ffd166;
+
+text-shadow:
+0 0 20px gold,
+0 0 40px orange;
+
+}
+
+.landing-text{
+
+font-size:28px;
+
+margin:25px 0 50px;
+
+color:#ddd;
+
+}
+
+#playBtn{
+
+padding:22px 70px;
+
+font-size:28px;
+
+border-radius:60px;
+
+background:linear-gradient(135deg,#8b5cf6,#ff4b2b);
+
+animation:playPulse 2s infinite;
+
+}
+
+@keyframes playPulse{
+
+0%{
+
+transform:scale(1);
+
+box-shadow:0 0 20px rgba(255,140,0,.3);
+
+}
+
+50%{
+
+transform:scale(1.06);
+
+box-shadow:0 0 45px rgba(255,140,0,.8);
+
+}
+
+100%{
+
+transform:scale(1);
+
+box-shadow:0 0 20px rgba(255,140,0,.3);
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.landing-subtitle{
+
+margin-top:15px;
+
+font-size:20px;
+
+font-style:italic;
+
+color:#cfcfcf;
+
+opacity:.8;
+
+letter-spacing:1px;
+
+animation:pulseText 3s infinite;
+
+}
+
+@keyframes pulseText{
+
+0%{
+opacity:.6;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+opacity:.6;
+}
+
+}
+
+.version{
+
+margin-top:35px;
+
+font-size:14px;
+
+opacity:.5;
+
+letter-spacing:2px;
+
+}

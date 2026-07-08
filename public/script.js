@@ -229,3 +229,25 @@ document
 .getElementById("inventoryBtn")
 .addEventListener("click", inventory);
 
+document.getElementById("playBtn").addEventListener("click", () => {
+
+    const landing = document.getElementById("landingScreen");
+    const game = document.getElementById("gameScreen");
+
+    // Fade out the landing page
+    landing.style.opacity = "0";
+
+    setTimeout(() => {
+
+        landing.style.display = "none";
+
+        game.style.display = "block";
+
+        setTimeout(() => {
+            game.style.opacity = "1";
+        }, 100);
+
+    }, 700);
+
+});
+
