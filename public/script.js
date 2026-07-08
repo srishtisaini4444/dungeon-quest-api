@@ -9,6 +9,10 @@ async function loadPlayer(){
     document.getElementById("level").textContent = player.level;
     document.getElementById("gold").textContent = player.gold;
     document.getElementById("weapon").textContent = player.weapon;
+    document.getElementById("hpSide").textContent = player.hp;
+document.getElementById("levelSide").textContent = player.level;
+document.getElementById("goldSide").textContent = player.gold;
+document.getElementById("weaponSide").textContent = player.weapon;
 
     document.getElementById("healthBar").style.width =
 player.hp + "%";
@@ -52,6 +56,10 @@ async function fight(){
     document.getElementById("level").textContent = result.player.level;
     document.getElementById("gold").textContent = result.player.gold;
     document.getElementById("weapon").textContent = result.player.weapon;
+    document.getElementById("hpSide").textContent = result.player.hp;
+document.getElementById("levelSide").textContent = result.player.level;
+document.getElementById("goldSide").textContent = result.player.gold;
+document.getElementById("weaponSide").textContent = result.player.weapon;
 
     document.getElementById("healthBar").style.width =
 result.player.hp + "%";
