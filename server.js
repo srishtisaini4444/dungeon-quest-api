@@ -183,6 +183,16 @@ if (player.hp === 0) {
 
     player.inventory.push(enemy.loot);
 
+    if (
+    enemy.loot.includes("Sword") ||
+    enemy.loot.includes("Bow") ||
+    enemy.loot.includes("Axe")
+){
+
+    player.weapon = enemy.loot;
+
+}
+
     const battleResult = {
     enemy: enemy.name,
     damageTaken: enemy.damage,

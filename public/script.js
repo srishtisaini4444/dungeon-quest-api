@@ -180,11 +180,46 @@ async function inventory(){
 
     const items = await response.json();
 
-    document.getElementById("battleLog").innerHTML =
-    "<b>Inventory</b><br><br>" +
-    items.join("<br>");
+    let html = "<h3>🎒 Inventory</h3><br>";
 
-    showToast("🎒 Inventory Opened");
+    items.forEach(item=>{
+
+    if(
+        item.includes("Sword") ||
+        item.includes("Bow") ||
+        item.includes("Axe")
+    ){
+
+        html += `
+        <p>
+            ${item}
+            <button onclick="equipWeapon('${item}')">
+                Equip
+            </button>
+        </p>
+        `;
+    }
+
+    });
+    
+
+    document.getElementById("battleLog").innerHTML = html;
+
+}
+
+async function equipWeapon(weapon){
+
+    const response = await fetch(`/equip/${encodeURIComponent(weapon)}`,{
+
+        method:"POST"
+
+    });
+
+    const result = await response.json();
+
+    showToast(result.message);
+
+    loadPlayer();
 
 }
 
@@ -202,6 +237,13 @@ async function heal(){
     result.message;
 
     showToast("❤️ Healed Successfully");
+
+}
+
+function backToDashboard(){
+
+    document.getElementById("battleLog").innerHTML =
+    "⚔️ Ready for battle!";
 
 }
 
@@ -251,3 +293,18 @@ document.getElementById("playBtn").addEventListener("click", () => {
 
 });
 
+document
+.getElementById("backBtn")
+.addEventListener("click", backToDashboard);
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document
+.getElementById("loader")
+.classList.add("loaderHide");
+
+},2000);
+
+});
