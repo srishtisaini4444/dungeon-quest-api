@@ -250,10 +250,18 @@ color:white;
 .info-item{
     display:flex;
     justify-content:space-between;
-    padding:15px;
+    align-items:center;
+    padding:16px;
     margin-bottom:15px;
-    background:rgba(255,255,255,.04);
-    border-radius:10px;
+    background:rgba(255,255,255,.06);
+    border-left:4px solid #b57cff;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.info-item:hover{
+    transform:translateX(8px);
+    background:rgba(181,124,255,.15);
 }
 
 .info-item span:last-child{
