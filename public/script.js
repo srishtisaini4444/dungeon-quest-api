@@ -23,6 +23,22 @@ Math.min(player.gold,100) + "%";
 
 loadPlayer();
 
+function showToast(message){
+
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 2000);
+
+}
+
 async function fight(){
 
     const response = await fetch("/fight",{
@@ -46,8 +62,8 @@ result.player.xp + "%";
 document.getElementById("goldBar").style.width =
 Math.min(result.player.gold, 100) + "%";
     
-
    document.getElementById("battleLog").innerHTML = `
+
 <div class="battle-card">
 
 <h2>⚔ Battle Result</h2>
@@ -68,6 +84,9 @@ Math.min(result.player.gold, 100) + "%";
 
 </div>
 `;
+
+showToast("⚔️ Victory! +" + result.xpGained + " XP");
+
 }
 
 async function shop(){
@@ -86,6 +105,8 @@ async function shop(){
 
     document.getElementById("battleLog").innerHTML=text;
 
+    showToast("🛒 Shop Opened");
+
 }
 
 async function saveGame(){
@@ -98,6 +119,8 @@ async function saveGame(){
 
     document.getElementById("battleLog").innerHTML =
     result.message;
+
+    showToast("💾 Game Saved");
 
 }
 
@@ -114,6 +137,8 @@ async function resetGame(){
     document.getElementById("battleLog").innerHTML =
     result.message;
 
+    showToast("🔄 Game Reset");
+
 }
 
 async function inventory(){
@@ -125,6 +150,8 @@ async function inventory(){
     document.getElementById("battleLog").innerHTML =
     "<b>Inventory</b><br><br>" +
     items.join("<br>");
+
+    showToast("🎒 Inventory Opened");
 
 }
 
@@ -140,6 +167,8 @@ async function heal(){
 
     document.getElementById("battleLog").innerHTML =
     result.message;
+
+    showToast("❤️ Healed Successfully");
 
 }
 
