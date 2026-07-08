@@ -583,3 +583,47 @@ button:hover::before{
     opacity:1;
     transform:translateX(0);
 }
+
+#levelPopup{
+
+position:fixed;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%) scale(.5);
+
+padding:35px 60px;
+
+background:linear-gradient(135deg,#ffd166,#ff8c00);
+
+color:#222;
+
+font-size:38px;
+
+font-weight:bold;
+
+border-radius:20px;
+
+box-shadow:0 0 60px gold;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.4s;
+
+z-index:1000;
+
+font-family:"Cinzel",serif;
+
+}
+
+#levelPopup.show{
+
+opacity:1;
+
+transform:translate(-50%,-50%) scale(1);
+
+}

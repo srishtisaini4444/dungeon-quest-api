@@ -1,5 +1,6 @@
 async function loadPlayer(){
 
+
     const response = await fetch("/player");
 
     const player = await response.json();
@@ -43,7 +44,23 @@ function showToast(message){
 
 }
 
+function showLevelUp(){
+
+const popup=document.getElementById("levelPopup");
+
+popup.classList.add("show");
+
+setTimeout(()=>{
+
+popup.classList.remove("show");
+
+},1800);
+
+}
+
 async function fight(){
+
+    const oldLevel = parseInt(document.getElementById("level").textContent);
 
     const response = await fetch("/fight",{
         method:"POST"
@@ -54,6 +71,14 @@ async function fight(){
     document.getElementById("hp").textContent =
     `${result.player.hp} / 100`;
     document.getElementById("level").textContent = result.player.level;
+
+    if(result.player.level > oldLevel){
+
+    showLevelUp();
+
+    showToast("🏆 Level Up!");
+
+}
     document.getElementById("gold").textContent = result.player.gold;
     document.getElementById("weapon").textContent = result.player.weapon;
     document.getElementById("hpSide").textContent = result.player.hp;
