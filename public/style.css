@@ -462,3 +462,14 @@ button::after{
 button:hover::after{
     left:100%;
 }
+
+footer{
+    text-align:center;
+    margin-top:40px;
+    color:#bbb;
+    font-size:15px;
+}
+
+footer p{
+    opacity:.8;
+}
